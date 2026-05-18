@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jordan — Beyond the Horizon</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Cinzel for luxury display, Cormorant Garamond for elegance, Jost for modern body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <!-- <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-j">J</span>
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-text">JORDAN</p>
+      <p class="loader-sub">Loading the kingdom...</p>
+      <div class="loader-progress-track">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ========== SCROLL PROGRESS BAR ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-letter">J</span>
+      <span class="nav-logo-text">ORDAN</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+      <li><a href="#petra" class="nav-link" data-section="petra">Petra</a></li>
+      <li><a href="#wadi-rum" class="nav-link" data-section="wadi-rum">Wadi Rum</a></li>
+      <li><a href="#dead-sea" class="nav-link" data-section="dead-sea">Dead Sea</a></li>
+      <li><a href="#amman" class="nav-link" data-section="amman">Amman</a></li>
+      <li><a href="#culture" class="nav-link" data-section="culture">Culture</a></li>
+      <li><a href="#food" class="nav-link" data-section="food">Food</a></li>
+      <li><a href="#adventure" class="nav-link" data-section="adventure">Adventure</a></li>
+    </ul>
+    <button class="nav-cta">Plan Your Journey</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#hero" class="mob-link">Home</a></li>
+      <li><a href="#petra" class="mob-link">Petra</a></li>
+      <li><a href="#wadi-rum" class="mob-link">Wadi Rum</a></li>
+      <li><a href="#dead-sea" class="mob-link">Dead Sea</a></li>
+      <li><a href="#amman" class="mob-link">Amman</a></li>
+      <li><a href="#culture" class="mob-link">Culture</a></li>
+      <li><a href="#food" class="mob-link">Food</a></li>
+      <li><a href="#adventure" class="mob-link">Adventure</a></li>
+    </ul>
+  </div>
+
+  <!--  HERO SECTION  -->
+  <section id="hero">
+    <!-- Animated background canvas for particles -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- Parallax background layers -->
+    <div class="hero-bg-layer layer-1"></div>
+    <div class="hero-bg-layer layer-2"></div>
+    <div class="hero-bg-layer layer-3"></div>
+
+    <!-- Floating geometric shapes -->
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-letter">THE KINGDOM OF</p>
+      <!-- Each letter wrapped for individual animation -->
+      <h1 class="hero-title">
+        <span class="hero-word" id="hero-word-1">
+          <span class="char">J</span><span class="char">O</span><span class="char">R</span><span
+            class="char">D</span><span class="char">A</span><span class="char">N</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle">Where ancient wonders meet the infinite desert sky</p>
+      <div class="hero-buttons">
+        <a href="#petra" class="btn-primary">
+          <span>Explore Now</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#adventure" class="btn-ghost">Watch Story</a>
+      </div>
+
+    </div>
+
+    <!-- Hero stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num" data-target="10000">0</span>
+        <span class="stat-suffix">+</span>
+        <p>Years of History</p>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="102">0</span>
+        <span class="stat-suffix">k</span>
+        <p>km² of Land</p>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="7">0</span>
+        <span class="stat-suffix"></span>
+        <p>Wonders of World</p>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="5">0</span>
+        <span class="stat-suffix">M+</span>
+        <p>Annual Visitors</p>
+      </div>
+    </div>
+
+    <!-- SVG wave divider -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--bg-primary)" />
+      </svg>
+    </div>
+  </section>
+
+  <!--  PETRA SECTION -->
+  <section id="petra" class="section-landmark">
+    <div class="landmark-grid">
+      <!-- Left: text content -->
+      <div class="landmark-text reveal-block">
+        <span class="section-tag">01 / Wonder of the World</span>
+        <h2 class="section-title">
+          <em>The Rose-Red</em><br>City of Petra
+        </h2>
+        <p class="section-body">
+          Carved directly into rose-red sandstone cliffs more than 2,000 years ago, Petra stands as Jordan's most iconic
+          treasure and one of humanity's greatest architectural achievements. Enter through the Siq — a narrow gorge
+          nearly two kilometres long — and emerge to the breathtaking façade of Al-Khazneh.
+        </p>
+        <div class="landmark-facts">
+          <div class="fact-pill">
+            <span class="fact-icon">🏛</span>
+            <span>312 BC Nabataean Capital</span>
+          </div>
+          <div class="fact-pill">
+            <span class="fact-icon">🌍</span>
+            <span>UNESCO World Heritage</span>
+          </div>
+          <div class="fact-pill">
+            <span class="fact-icon">✨</span>
+            <span>New 7 Wonders of the World</span>
+          </div>
+        </div>
+        <a href="#adventure" class="btn-primary">
+          <span>Discover Petra</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: visual stack of images -->
+      <div class="landmark-visual reveal-block delay-2">
+        <div class="img-stack">
+          <div class="img-card img-card-main tilt-card">
+            <img src="https://images.unsplash.com/photo-1548786811-dd6e453ccca7?w=800&q=80" alt="Treasury of Petra"
+              loading="lazy" />
+            <div class="img-overlay">
+              <span>Al-Khazneh Treasury</span>
+            </div>
+          </div>
+          <div class="img-card img-card-float tilt-card">
+            <img src="Al_Deir_Petra.JPG" alt="Petra Monastery" loading="lazy" />
+            <div class="img-overlay"><span>The Monastery</span></div>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="floating-badge">
+          <span class="badge-num">2000</span>
+          <span class="badge-label">Years Old</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  WADI RUM SECTION  -->
+  <section id="wadi-rum" class="section-fullscreen">
+    <!-- Full-bleed background image with parallax -->
+    <div class="fullscreen-bg parallax-bg" data-speed="0.3"
+      style="background-image: url('https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=1600&q=80');">
+    </div>
+    <div class="fullscreen-overlay"></div>
+
+    <div class="fullscreen-content">
+      <div class="fullscreen-left reveal-block">
+        <span class="section-tag light">02 / Valley of the Moon</span>
+        <h2 class="section-title light">
+          Wadi Rum —<br><em>Mars on Earth</em>
+        </h2>
+        <p class="section-body light">
+          Vast red sand dunes, ancient petroglyphs, and towering sandstone pillars define one of the world's most
+          dramatic desert landscapes. Wadi Rum served as the backdrop for Lawrence of Arabia and The Martian — because
+          nothing on Earth looks quite like it.
+        </p>
+      </div>
+
+      <div class="fullscreen-cards reveal-block delay-2">
+        <div class="exp-card tilt-card">
+          <div class="exp-icon">🌙</div>
+          <h4>Stargazing</h4>
+          <p>Zero light pollution, infinite galaxies</p>
+        </div>
+        <div class="exp-card tilt-card">
+          <div class="exp-icon">🐪</div>
+          <h4>Camel Treks</h4>
+          <p>Ancient bedouin trails at sunrise</p>
+        </div>
+        <div class="exp-card tilt-card">
+          <div class="exp-icon">🏕</div>
+          <h4>Bubble Camps</h4>
+          <p>Sleep under desert stars in luxury</p>
+        </div>
+        <div class="exp-card tilt-card">
+          <div class="exp-icon">🚁</div>
+          <h4>Hot Air Balloon</h4>
+          <p>Aerial views of a thousand canyons</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-wave-bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg-primary)" />
+      </svg>
+    </div>
+  </section>
+
+  <!--  DEAD SEA SECTION  -->
+  <section id="dead-sea" class="section-landmark alt">
+    <div class="landmark-grid reverse">
+      <div class="landmark-visual reveal-block">
+        <div class="img-stack">
+          <div class="img-card img-card-main tilt-card">
+            <img src="DeadSea.jpg" alt="Dead Sea" loading="lazy" />
+            <div class="img-overlay"><span>Lowest Point on Earth</span></div>
+          </div>
+          <div class="img-card img-card-float right tilt-card">
+            <img src="Salt Formations.jpg" alt="Dead Sea Salt" loading="lazy" />
+            <div class="img-overlay"><span>Salt Formations</span></div>
+          </div>
+        </div>
+        <div class="floating-badge right">
+          <span class="badge-num">-430</span>
+          <span class="badge-label">Meters Below Sea Level</span>
+        </div>
+      </div>
+
+      <div class="landmark-text reveal-block delay-2">
+        <span class="section-tag">03 / Natural Wonder</span>
+        <h2 class="section-title">
+          <em>Float on Water,</em><br>Heal Your Soul
+        </h2>
+        <p class="section-body">
+          The Dead Sea is the lowest point on Earth — a hypnotic stretch of indigo water so dense with salt that the
+          human body floats effortlessly on its surface. Its mineral-rich mud has been celebrated for therapeutic
+          properties since Cleopatra's time.
+        </p>
+        <div class="landmark-facts">
+          <div class="fact-pill"><span class="fact-icon">💧</span><span>33% Salt Concentration</span></div>
+          <div class="fact-pill"><span class="fact-icon">🌊</span><span>50 km Long Shoreline</span></div>
+          <div class="fact-pill"><span class="fact-icon">💎</span><span>Ancient Healing Mineral Mud</span></div>
+        </div>
+        <a href="#adventure" class="btn-primary">
+          <span>Experience It</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!--  AMMAN SECTION  -->
+  <section id="amman" class="section-city">
+    <div class="city-header reveal-block">
+      <span class="section-tag">04 / Capital City</span>
+      <h2 class="section-title centered">
+        Amman — <em>Ancient Hills,<br>Modern Heartbeat</em>
+      </h2>
+      <p class="section-body centered">
+        Built across seven hills (now growing to 19+), Jordan's vibrant capital blends Roman amphitheatres with rooftop
+        cocktail bars, bustling souks with world-class galleries, and centuries-old mosques with neon-lit street art.
+      </p>
+    </div>
+
+    <!-- Asymmetric mosaic grid -->
+    <div class="city-mosaic reveal-block delay-2">
+      <div class="mosaic-item mosaic-large tilt-card">
+        <img src="Bronze-Age-cave.jpg" alt="Amman Skyline" loading="lazy" />
+        <div class="mosaic-caption">
+          <h4>Roman Citadel</h4>
+          <p>2,000 years of history on Jebel al-Qal'a</p>
+        </div>
+      </div>
+      <div class="mosaic-right">
+        <div class="mosaic-item mosaic-small tilt-card">
+          <img src="https://jordaniaexclusiva.com/wp-content/uploads/2024/01/rainbow-street.jpg"
+            alt="Rainbow Street Amman" loading="lazy" />
+          <div class="mosaic-caption">
+            <h4>Rainbow Street</h4>
+            <p>The city's bohemian soul</p>
+          </div>
+        </div>
+        <div class="mosaic-item mosaic-small tilt-card">
+          <img src="the-South-Roman-Theater-Amman-Jordan.jpg" alt="Amman Roman Theatre" loading="lazy" />
+          <div class="mosaic-caption">
+            <h4>Roman Theatre</h4>
+            <p>6,000 seat ancient spectacle</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amman stats row -->
+    <div class="city-stats reveal-block delay-3">
+      <div class="city-stat">
+        <div class="city-stat-icon">🏛</div>
+        <span class="city-stat-num counter" data-target="2">0</span><span class="city-stat-suf">000</span>
+        <p>Years of Continuous Settlement</p>
+      </div>
+      <div class="city-stat">
+        <div class="city-stat-icon">🌆</div>
+        <span class="city-stat-num counter" data-target="4">0</span><span class="city-stat-suf">M+</span>
+        <p>Population</p>
+      </div>
+      <div class="city-stat">
+        <div class="city-stat-icon">🎨</div>
+        <span class="city-stat-num counter" data-target="300">0</span><span class="city-stat-suf">+</span>
+        <p>Art Galleries & Studios</p>
+      </div>
+      <div class="city-stat">
+        <div class="city-stat-icon">🏙</div>
+        <span class="city-stat-num counter" data-target="19">0</span><span class="city-stat-suf"></span>
+        <p>Hills of the City</p>
+      </div>
+    </div>
+  </section>
+
+  <!--  CULTURE SECTION  -->
+  <section id="culture" class="section-culture">
+    <div class="culture-bg-text">ثقافة</div>
+
+    <div class="culture-layout">
+      <div class="culture-left reveal-block">
+        <span class="section-tag">05 / Living Heritage</span>
+        <h2 class="section-title">
+          <em>A Culture</em><br>Woven in Time
+        </h2>
+        <p class="section-body">
+          Jordanian culture is a magnificent tapestry of Bedouin traditions, Ottoman heritage, and Pan-Arab warmth.
+          Hospitality here is not a gesture — it is a way of life. A stranger is a guest to be honoured with coffee,
+          dates, and stories that span generations.
+        </p>
+        <div class="culture-pillars">
+          <div class="pillar reveal-block delay-1">
+            <div class="pillar-line"></div>
+            <h4>Diwaniyyah</h4>
+            <p>The ancient gathering hall where stories, poetry and politics intertwine</p>
+          </div>
+          <div class="pillar reveal-block delay-2">
+            <div class="pillar-line"></div>
+            <h4>Zarb & Mansaf</h4>
+            <p>Communal feasts cooked underground — the ultimate Bedouin welcome</p>
+          </div>
+          <div class="pillar reveal-block delay-3">
+            <div class="pillar-line"></div>
+            <h4>Dabke</h4>
+            <p>The rhythmic folk dance performed at every celebration and wedding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="culture-right reveal-block delay-2">
+        <div class="culture-img-wrap tilt-card">
+          <img src="ac.png" loading="lazy" />
+        </div>
+        <!-- Floating quote -->
+        <div class="culture-quote">
+          <svg class="quote-mark" viewBox="0 0 40 30">
+            <path d="M0 30 Q8 10 20 0 Q10 15 12 30Z M20 30 Q28 10 40 0 Q30 15 32 30Z" fill="var(--gold)" />
+          </svg>
+          <p>"The guest is the master of the house"</p>
+          <span>— Bedouin Proverb</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  FOOD SECTION  -->
+  <section id="food" class="section-food">
+    <div class="food-header reveal-block">
+      <span class="section-tag">06 / Culinary Journey</span>
+      <h2 class="section-title centered">Taste the Kingdom</h2>
+      <p class="section-body centered">
+        Jordanian cuisine is an ode to spice, smoke, and centuries of tradition — from the national dish Mansaf to the
+        legendary street food of Hashem restaurant in downtown Amman.
+      </p>
+    </div>
+
+    <!-- Horizontal scrollable food cards -->
+    <div class="food-scroll-track">
+      <div class="food-scroll-inner" id="food-scroll">
+        <div class="food-card tilt-card">
+          <div class="food-img-wrap">
+            <img src="mansaf.jpg" alt="Mansaf" loading="lazy" />
+          </div>
+          <div class="food-info">
+            <span class="food-tag">National Dish</span>
+            <h4>Mansaf</h4>
+            <p>Slow-cooked lamb in fermented dried yogurt over fragrant rice</p>
+          </div>
+        </div>
+        <div class="food-card tilt-card">
+          <div class="food-img-wrap">
+            <img src="kebab.jpg" alt="Kebab" loading="lazy" />
+          </div>
+          <div class="food-info">
+            <span class="food-tag">Grilled Perfection</span>
+            <h4>Kebab & Kofta</h4>
+            <p>Charcoal-fired minced meat with aromatic Middle Eastern spices</p>
+          </div>
+        </div>
+        <div class="food-card tilt-card">
+          <div class="food-img-wrap">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/5451b54de4b0d0c075728ccb/1459625501132-7BUDVVEPUAOZCQBEE00V/image-asset.jpeg"
+              alt="Mezze" loading="lazy" />
+          </div>
+          <div class="food-info">
+            <span class="food-tag">Sharing Culture</span>
+            <h4>Mezze Spread</h4>
+            <p>Hummus, baba ghanoush, tabbouleh — a feast of small plates</p>
+          </div>
+        </div>
+        <div class="food-card tilt-card">
+          <div class="food-img-wrap">
+            <img src="Sweet Legacy.jpg" alt="Knafeh" loading="lazy" />
+          </div>
+          <div class="food-info">
+            <span class="food-tag">Sweet Legacy</span>
+            <h4>Knafeh</h4>
+            <p>Shredded pastry soaked in rose-water syrup with melted cheese</p>
+          </div>
+        </div>
+        <div class="food-card tilt-card">
+          <div class="food-img-wrap">
+            <img
+              src="https://i0.wp.com/viancathatvagabond.com/wp-content/uploads/2023/06/amman-best-falafel.jpeg?fit=400%2C711&ssl=1"
+              alt="Falafel" loading="lazy" />
+          </div>
+          <div class="food-info">
+            <span class="food-tag">Street Legend</span>
+            <h4>Falafel</h4>
+            <p>Crispy chickpea fritters — Amman's beloved street breakfast</p>
+          </div>
+        </div>
+      </div>
+      <!-- Drag hint -->
+      <div class="drag-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12h6M15 9l3 3-3 3" />
+        </svg>
+        <span>Drag to explore</span>
+      </div>
+    </div>
+  </section>
+
+  <!--  ADVENTURE SECTION  -->
+  <section id="adventure" class="section-adventure">
+    <div class="adv-bg parallax-bg" data-speed="0.2"
+      style="background-image: url('https://images.unsplash.com/photo-1578927072005-9d55f2fd38f9?w=1600&q=80');">
+    </div>
+    <div class="adv-overlay"></div>
+
+    <div class="adv-content">
+      <div class="adv-header reveal-block">
+        <span class="section-tag light">07 / Tourism & Adventure</span>
+        <h2 class="section-title light centered">
+          Your Next <em>Grand Adventure</em><br>Begins Here
+        </h2>
+      </div>
+
+      <!-- Timeline of experiences -->
+      <div class="adv-timeline">
+        <div class="timeline-item reveal-block delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-day">Day 1–2</span>
+            <h4>Amman & Jerash</h4>
+            <p>Roman ruins, vibrant markets, and rooftop dinners over the city</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-block delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-day">Day 3–4</span>
+            <h4>Petra & Beyond</h4>
+            <p>Hike through the Siq, explore the Monastery at sunset</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-block delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-day">Day 5–6</span>
+            <h4>Wadi Rum Desert</h4>
+            <p>Camel trek, jeep safari, sleep in a luxury dome under stars</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-block delay-4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-day">Day 7</span>
+            <h4>Dead Sea & Aqaba</h4>
+            <p>Float at the lowest point on Earth, dive the Red Sea coral reefs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="adv-cta reveal-block delay-5">
+        <a href="#footer" class="btn-primary large">
+          <span>Start Planning Your Trip</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!--  FOOTER   -->
+  <footer id="footer">
+    <div class="footer-top">
+      <!-- Large decorative text -->
+      <div class="footer-bg-text">JORDAN</div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="nav-logo-letter">J</span>
+            <span class="nav-logo-text">ORDAN</span>
+          </div>
+          <p>Beyond the horizon, beyond imagination. The Kingdom of Jordan awaits those who seek wonder.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M22 8s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C15.2 3.8 12 3.8 12 3.8s-3.2 0-5.8.1c-.6.1-1.9.1-3 1.3C2.3 6 2 8 2 8S1.8 10.2 1.8 12.4v2.1c0 2.2.2 4.4.2 4.4s.3 2 1.2 2.8c1.1 1.1 2.6 1.1 3.3 1.2C8.4 23 12 23 12 23s3.2 0 5.8-.1c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.2-2.2.2-4.4v-2.1C22.2 10.2 22 8 22 8z" />
+                <polygon points="9.5,15.5 15.5,12 9.5,8.5" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Destinations</h5>
+          <ul>
+            <li><a href="#petra">Petra</a></li>
+            <li><a href="#wadi-rum">Wadi Rum</a></li>
+            <li><a href="#dead-sea">Dead Sea</a></li>
+            <li><a href="#amman">Amman</a></li>
+            <li><a href="#adventure">Jerash & Aqaba</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Experiences</h5>
+          <ul>
+            <li><a href="#culture">Culture & Heritage</a></li>
+            <li><a href="#food">Culinary Journey</a></li>
+            <li><a href="#adventure">Desert Adventure</a></li>
+            <li><a href="#adventure">Diving & Water Sports</a></li>
+            <li><a href="#adventure">Wellness & Healing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Plan Your Trip</h5>
+          <ul>
+            <li><a href="#">Jordan Pass</a></li>
+            <li><a href="#">Travel Guides</a></li>
+            <li><a href="#">Best Time to Visit</a></li>
+            <li><a href="#">Getting Here</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Jordan Tourism Board. Crafted with passion for the Kingdom.</p>
+      <p class="footer-tagline">مرحباً بكم في الأردن — Welcome to Jordan</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
